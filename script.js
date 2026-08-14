@@ -1,3 +1,7 @@
+// ==========================================
+// INDIAN FLAG PARTICLES
+// ==========================================
+
 const particleContainer =
     document.querySelector(".particles");
 
@@ -9,7 +13,8 @@ const particleColors = [
 
 for (let i = 0; i < 40; i++) {
 
-    const particle = document.createElement("span");
+    const particle =
+        document.createElement("span");
 
     particle.classList.add("particle");
 
@@ -25,47 +30,63 @@ for (let i = 0; i < 40; i++) {
     particle.style.background =
         particleColors[
             Math.floor(
-                Math.random() * particleColors.length
+                Math.random() *
+                particleColors.length
             )
         ];
 
     particleContainer.appendChild(particle);
 }
+
+
+// ==========================================
 // INDEPENDENCE DAY COUNTDOWN
+// ==========================================
 
 const independenceDay =
     new Date("August 15, 2026 00:00:00").getTime();
 
 function updateCountdown() {
 
-    const now = new Date().getTime();
+    const now =
+        new Date().getTime();
 
     const difference =
         independenceDay - now;
 
     if (difference <= 0) {
 
-        document.getElementById("days").textContent = "00";
-        document.getElementById("hours").textContent = "00";
-        document.getElementById("minutes").textContent = "00";
-        document.getElementById("seconds").textContent = "00";
+        document.getElementById("days").textContent =
+            "00";
+
+        document.getElementById("hours").textContent =
+            "00";
+
+        document.getElementById("minutes").textContent =
+            "00";
+
+        document.getElementById("seconds").textContent =
+            "00";
 
         return;
     }
 
     const days =
         Math.floor(
-            difference / (1000 * 60 * 60 * 24)
+            difference /
+            (1000 * 60 * 60 * 24)
         );
 
     const hours =
         Math.floor(
-            (difference / (1000 * 60 * 60)) % 24
+            (difference /
+                (1000 * 60 * 60)) % 24
         );
 
     const minutes =
         Math.floor(
-            (difference / (1000 * 60)) % 60
+            (difference /
+                (1000 * 60)) % 60
         );
 
     const seconds =
@@ -89,7 +110,11 @@ function updateCountdown() {
 updateCountdown();
 
 setInterval(updateCountdown, 1000);
+
+
+// ==========================================
 // MUSIC PLAYER
+// ==========================================
 
 const music =
     document.getElementById("backgroundMusic");
@@ -97,31 +122,57 @@ const music =
 const musicButton =
     document.getElementById("musicButton");
 
-musicButton.addEventListener("click", function () {
+musicButton.addEventListener(
+    "click",
+    function () {
 
-    if (music.paused) {
+        if (music.paused) {
 
-        music.play();
+            music.play()
+                .then(function () {
 
-        musicButton.textContent =
-            "⏸ Pause Music";
+                    musicButton.textContent =
+                        "⏸ Pause Music";
 
-    } else {
+                })
+                .catch(function (error) {
 
-        music.pause();
+                    console.log(
+                        "Music error:",
+                        error
+                    );
 
-        musicButton.textContent =
-            "▶ Play Music";
+                    alert(
+                        "Music could not be played. Please check the MP3 file."
+                    );
+
+                });
+
+        } else {
+
+            music.pause();
+
+            musicButton.textContent =
+                "▶ Play Music";
+        }
+
     }
+);
 
-});
-// Celebrate India button
+
+// ==========================================
+// CELEBRATE INDIA BUTTON
+// ==========================================
 
 const celebrateButton =
-    document.getElementById("celebrateButton");
+    document.getElementById(
+        "celebrateButton"
+    );
 
 const celebrationMessage =
-    document.getElementById("celebrationMessage");
+    document.getElementById(
+        "celebrationMessage"
+    );
 
 celebrateButton.addEventListener(
     "click",
@@ -130,49 +181,90 @@ celebrateButton.addEventListener(
         celebrationMessage.style.display =
             "block";
 
-        // Launch several fireworks
-
+        // Launch fireworks
         for (let i = 0; i < 8; i++) {
 
-            setTimeout(function () {
+            setTimeout(
+                function () {
 
-                createFirework();
+                    createFirework();
 
-            }, i * 300);
+                },
+                i * 300
+            );
+
         }
+
     }
 );
-// ===============================
-// INDEPENDENCE DAY FIREWORKS
-// ===============================
 
-const canvas = document.getElementById("fireworksCanvas");
-const ctx = canvas.getContext("2d");
+
+// ==========================================
+// FIREWORKS
+// ==========================================
+
+const canvas =
+    document.getElementById(
+        "fireworksCanvas"
+    );
+
+const ctx =
+    canvas.getContext("2d");
+
 
 function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+
+    canvas.width =
+        window.innerWidth;
+
+    canvas.height =
+        window.innerHeight;
 }
 
 resizeCanvas();
 
-window.addEventListener("resize", resizeCanvas);
+window.addEventListener(
+    "resize",
+    resizeCanvas
+);
+
 
 let fireworks = [];
+
 let particles = [];
+
+
+// ==========================================
+// CREATE FIREWORK
+// ==========================================
 
 function createFirework() {
 
-    const x = Math.random() * canvas.width;
-    const y = Math.random() * (canvas.height * 0.55);
+    const x =
+        Math.random() *
+        canvas.width;
+
+    const y =
+        Math.random() *
+        (canvas.height * 0.55);
 
     fireworks.push({
+
         x: x,
+
         y: canvas.height,
+
         targetY: y,
+
         speed: 8
+
     });
 }
+
+
+// ==========================================
+// FIREWORK EXPLOSION
+// ==========================================
 
 function explode(x, y) {
 
@@ -185,29 +277,44 @@ function explode(x, y) {
     for (let i = 0; i < 60; i++) {
 
         const angle =
-            Math.random() * Math.PI * 2;
+            Math.random() *
+            Math.PI * 2;
 
         const speed =
             Math.random() * 6 + 2;
 
         particles.push({
+
             x: x,
+
             y: y,
 
-            vx: Math.cos(angle) * speed,
-            vy: Math.sin(angle) * speed,
+            vx:
+                Math.cos(angle) *
+                speed,
+
+            vy:
+                Math.sin(angle) *
+                speed,
 
             alpha: 1,
 
             color:
                 colors[
                     Math.floor(
-                        Math.random() * colors.length
+                        Math.random() *
+                        colors.length
                     )
                 ]
+
         });
     }
 }
+
+
+// ==========================================
+// ANIMATE FIREWORKS
+// ==========================================
 
 function animateFireworks() {
 
@@ -218,71 +325,103 @@ function animateFireworks() {
         canvas.height
     );
 
+
     // Fireworks going upward
 
-    fireworks.forEach((firework, index) => {
+    fireworks.forEach(
+        function (firework, index) {
 
-        firework.y -= firework.speed;
+            firework.y -=
+                firework.speed;
 
-        ctx.beginPath();
+            ctx.beginPath();
 
-        ctx.arc(
-            firework.x,
-            firework.y,
-            3,
-            0,
-            Math.PI * 2
-        );
-
-        ctx.fillStyle = "#ffffff";
-        ctx.fill();
-
-        if (firework.y <= firework.targetY) {
-
-            explode(
+            ctx.arc(
                 firework.x,
-                firework.y
+                firework.y,
+                3,
+                0,
+                Math.PI * 2
             );
 
-            fireworks.splice(index, 1);
+            ctx.fillStyle =
+                "#ffffff";
+
+            ctx.fill();
+
+
+            if (
+                firework.y <=
+                firework.targetY
+            ) {
+
+                explode(
+                    firework.x,
+                    firework.y
+                );
+
+                fireworks.splice(
+                    index,
+                    1
+                );
+            }
+
         }
-    });
+    );
+
 
     // Explosion particles
 
-    particles.forEach((particle, index) => {
+    particles.forEach(
+        function (particle, index) {
 
-        particle.x += particle.vx;
-        particle.y += particle.vy;
+            particle.x +=
+                particle.vx;
 
-        particle.vy += 0.04;
+            particle.y +=
+                particle.vy;
 
-        particle.alpha -= 0.015;
+            particle.vy +=
+                0.04;
 
-        ctx.beginPath();
+            particle.alpha -=
+                0.015;
 
-        ctx.arc(
-            particle.x,
-            particle.y,
-            2,
-            0,
-            Math.PI * 2
-        );
 
-        ctx.fillStyle =
-            particle.color;
+            ctx.beginPath();
 
-        ctx.globalAlpha =
-            particle.alpha;
+            ctx.arc(
+                particle.x,
+                particle.y,
+                2,
+                0,
+                Math.PI * 2
+            );
 
-        ctx.fill();
+            ctx.fillStyle =
+                particle.color;
 
-        ctx.globalAlpha = 1;
+            ctx.globalAlpha =
+                particle.alpha;
 
-        if (particle.alpha <= 0) {
-            particles.splice(index, 1);
+            ctx.fill();
+
+            ctx.globalAlpha = 1;
+
+
+            if (
+                particle.alpha <= 0
+            ) {
+
+                particles.splice(
+                    index,
+                    1
+                );
+            }
+
         }
-    });
+    );
+
 
     requestAnimationFrame(
         animateFireworks
@@ -290,15 +429,3 @@ function animateFireworks() {
 }
 
 animateFireworks();
-function playMusic() {
-    const music = document.getElementById("backgroundMusic");
-    const button = document.getElementById("musicButton");
-
-    if (music.paused) {
-        music.play();
-        button.innerHTML = "⏸ Pause Music";
-    } else {
-        music.pause();
-        button.innerHTML = "▶ Play Music";
-    }
-}
