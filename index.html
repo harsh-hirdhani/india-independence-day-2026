@@ -5,30 +5,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Celebrate India</title>
+    <title>Happy Independence Day 🇮🇳</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <!-- TRICOLOR PARTICLES -->
-    <div class="particles"></div>
+    <!-- Animated particles -->
+    <div id="particles"></div>
+
+    <!-- Fireworks -->
+    <canvas id="fireworksCanvas"></canvas>
 
 
-    <!-- HERO SECTION -->
+    <!-- MAIN HERO -->
     <section class="hero">
 
-        <!-- INDIAN FLAG -->
-        <div class="flag-container">
+        <!-- Indian Flag -->
+        <div class="flag-area">
+
+            <div class="flag-pole"></div>
 
             <div class="flag">
 
-                <!-- SAFFRON -->
-                <div class="flag-stripe saffron"></div>
+                <div class="stripe saffron"></div>
 
-                <!-- WHITE + ASHOKA CHAKRA -->
-                <div class="flag-stripe white">
+                <div class="stripe white">
 
                     <div class="chakra">
 
@@ -58,28 +61,24 @@
                         <span></span>
                         <span></span>
                         <span></span>
-                        <span></span>
 
                     </div>
 
                 </div>
 
-                <!-- GREEN -->
-                <div class="flag-stripe green"></div>
+                <div class="stripe green"></div>
 
             </div>
-
-            <div class="flag-pole"></div>
 
         </div>
 
 
-        <!-- MAIN CONTENT -->
-        <div class="hero-content">
+        <!-- CONTENT -->
+        <div class="content">
 
-            <div class="small-title">
-                PROUD TO BE INDIAN
-            </div>
+            <p class="top-text">
+                🇮🇳 PROUD TO BE INDIAN 🇮🇳
+            </p>
 
 
             <h1>
@@ -88,33 +87,26 @@
             </h1>
 
 
-            <div class="date">
+            <p class="date">
                 15 AUGUST 2026
-            </div>
+            </p>
 
 
-            <p class="hero-message">
-                Celebrating the spirit of freedom,
-                unity and the incredible journey of India.
+            <p class="description">
+                Celebrating the spirit of freedom, unity,
+                courage and the incredible journey of India.
             </p>
 
 
             <!-- BUTTONS -->
             <div class="buttons">
 
-                <!-- MUSIC BUTTON -->
-                <button
-                    id="musicButton"
-                    type="button">
+                <button id="musicButton">
                     ▶ Play Music
                 </button>
 
-
-                <!-- CELEBRATE BUTTON -->
-                <button
-                    id="celebrateButton"
-                    type="button">
-                    🇮🇳 Celebrate India 🇮🇳
+                <button id="celebrateButton">
+                    🎆 Celebrate India
                 </button>
 
             </div>
@@ -129,68 +121,58 @@
 
 
             <!-- COUNTDOWN -->
-            <div class="countdown-section">
+            <div class="countdown-title">
+                COUNTDOWN TO INDEPENDENCE DAY
+            </div>
 
-                <div class="countdown-title">
-                    COUNTDOWN TO INDEPENDENCE DAY
+
+            <div class="countdown">
+
+                <div class="time">
+                    <strong id="days">00</strong>
+                    <small>DAYS</small>
                 </div>
 
+                <div class="time">
+                    <strong id="hours">00</strong>
+                    <small>HOURS</small>
+                </div>
 
-                <div class="countdown">
+                <div class="time">
+                    <strong id="minutes">00</strong>
+                    <small>MINUTES</small>
+                </div>
 
-                    <div class="time-box">
-                        <span id="days">00</span>
-                        <small>DAYS</small>
-                    </div>
-
-
-                    <div class="time-box">
-                        <span id="hours">00</span>
-                        <small>HOURS</small>
-                    </div>
-
-
-                    <div class="time-box">
-                        <span id="minutes">00</span>
-                        <small>MINUTES</small>
-                    </div>
-
-
-                    <div class="time-box">
-                        <span id="seconds">00</span>
-                        <small>SECONDS</small>
-                    </div>
-
+                <div class="time">
+                    <strong id="seconds">00</strong>
+                    <small>SECONDS</small>
                 </div>
 
             </div>
 
 
             <!-- GREETING CARD -->
-            <div class="greeting-card">
+            <div class="card">
 
-                <div class="greeting-icon">
+                <div class="card-flag">
                     🇮🇳
                 </div>
-
 
                 <h2>
                     A Proud Indian's Greeting
                 </h2>
 
-
                 <p>
-                    May our nation continue to grow,
-                    prosper and shine.
+                    Freedom in our hearts.
+                    Pride in our nation.
+                    Hope for our future.
                 </p>
 
-
                 <p>
-                    Let us always respect the freedom
-                    and sacrifices that made our country
-                    what it is today.
+                    Let us remember the sacrifices of our
+                    freedom fighters and always keep our
+                    tricolour flying high.
                 </p>
-
 
                 <div class="signature">
                     — Harsh Hirdhani
@@ -205,20 +187,18 @@
                 class="celebration-message">
 
                 <h2>
-                    HAPPY INDEPENDENCE DAY 🇮🇳
+                    🇮🇳 JAI HIND 🇮🇳
                 </h2>
 
-
                 <p>
-                    Freedom in our hearts,<br>
-                    Pride in our nation,<br>
-                    Hope for our future.
+                    Happy Independence Day!
                 </p>
 
-
-                <strong>
-                    — Harsh Hirdhani
-                </strong>
+                <p>
+                    Freedom in our hearts,
+                    pride in our nation,
+                    and hope for our future.
+                </p>
 
             </div>
 
@@ -227,13 +207,7 @@
     </section>
 
 
-    <!-- FIREWORKS CANVAS -->
-    <canvas id="fireworksCanvas"></canvas>
-
-
-    <!-- JAVASCRIPT -->
     <script src="script.js"></script>
 
 </body>
-
 </html>
