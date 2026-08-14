@@ -1,191 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>Celebrate India</title>
 
-    <title>India | Independence Day 2026</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    <link rel="stylesheet" href="style.css">
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+            background: linear-gradient(
+                180deg,
+                #ff9933,
+                #ffffff,
+                #ffffff,
+                #138808
+            );
+            text-align: center;
+            overflow-x: hidden;
+        }
 
+        header {
+            padding: 30px 20px;
+        }
+
+        h1 {
+            font-size: 45px;
+            color: #000080;
+            margin-bottom: 10px;
+        }
+
+        h2 {
+            color: #ff6600;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .buttons {
+            margin: 30px 0;
+        }
+
+        button {
+            padding: 15px 30px;
+            margin: 10px;
+            border: none;
+            border-radius: 30px;
+            background: #ff9933;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        #backgroundMusic {
+            display: none;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .time-box {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 15px;
+            min-width: 100px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .time-box span {
+            display: block;
+            font-size: 35px;
+            font-weight: bold;
+            color: #000080;
+        }
+
+        .time-box small {
+            color: #333;
+        }
+
+        .celebration-message {
+            display: none;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 600px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .celebration-message h2 {
+            font-size: 30px;
+        }
+
+        .celebration-message p {
+            font-size: 20px;
+            line-height: 1.8;
+            margin: 15px 0;
+        }
+
+        #fireworksCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 10;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            overflow: hidden;
+        }
+
+        .particle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            from {
+                transform: translateY(-20px);
+                opacity: 1;
+            }
+
+            to {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <main>
+    <!-- Background particles -->
+    <div class="particles"></div>
 
-        <section class="hero">
-            <div class="particles"></div>
-        <div class="flag-container">
+    <header>
+        <h1>🇮🇳 Celebrate India 🇮🇳</h1>
+        <h2>Happy Independence Day</h2>
+    </header>
 
-    <div class="flag">
-        <div class="flag-stripe saffron"></div>
+    <main class="container">
 
-        <div class="flag-stripe white">
-           <div class="chakra">
-    <div class="chakra-center"></div>
+        <!-- Music -->
+        <div class="buttons">
 
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-    <span></span>
-</div>
+            <button id="musicButton">
+                ▶ Play Music
+            </button>
+
+            <audio
+                id="backgroundMusic"
+                src="independence-song.mp3"
+                loop>
+            </audio>
+
         </div>
 
-        <div class="flag-stripe green"></div>
-    </div>
+        <!-- Countdown -->
+        <div class="countdown">
 
-    <div class="flag-pole"></div>
-
-</div>
-            <div class="hero-content">
-
-                <p class="small-title">
-                    PROUD TO BE INDIAN
-                </p>
-
-                <h1>
-                    HAPPY
-                    <span>INDEPENDENCE DAY</span>
-                </h1>
-
-                <p class="date">
-                    15 AUGUST 2026
-                </p>
-
-                <p class="hero-message">
-                    Celebrating freedom, unity and the spirit
-                    of a billion dreams.
-                </p>
-                <div class="countdown-section">
-
-    <div class="countdown-title">
-        INDEPENDENCE DAY COUNTDOWN
-    </div>
-<div class="greeting-card">
-
-    <div class="greeting-icon">🇮🇳</div>
-
-    <h2>A Message From Me</h2>
-
-    <p>
-        Wishing you and your family a very Happy Independence Day!
-    </p>
-
-    <p>
-        May our tricolour always fly high with pride,
-        and may India continue to shine and grow.
-    </p>
-
-    <div class="signature">
-        — Harsh Hirdhani
-    </div>
-
-</div>
-    <div class="countdown">
-
-        <div class="time-box">
-            <span id="days">00</span>
-            <small>DAYS</small>
-        </div>
-
-        <div class="time-box">
-            <span id="hours">00</span>
-            <small>HOURS</small>
-        </div>
-
-        <div class="time-box">
-            <span id="minutes">00</span>
-            <small>MINUTES</small>
-        </div>
-
-        <div class="time-box">
-            <span id="seconds">00</span>
-            <small>SECONDS</small>
-        </div>
-
-    </div>
-
-</div>
-
-<div class="buttons">
-
-    <button id="musicButton" onclick="playMusic()">
-        ▶️ Play Music
-    </button>
-
-   <audio id="backgroundMusic" src="independence-song.mp3" loop></audio>
-
-    <canvas id="fireworksCanvas"></canvas>
-
-    <button id="celebrateButton">
-        Celebrate India
-    </button>
-
-</div>
-<div id="celebrationMessage" class="celebration-message">
-    <h2>🇮🇳 HAPPY INDEPENDENCE DAY 🇮🇳</h2>
-
-    <p>
-        Freedom in our hearts,<br>
-        Pride in our nation,<br>
-        Hope for our future.
-    </p>
-
-    <strong>— Harsh Hirdhani</strong>
-</div>
-
-                </div>
-
+            <div class="time-box">
+                <span id="days">00</span>
+                <small>Days</small>
             </div>
 
-        </section>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <small>Hours</small>
+            </div>
+
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <small>Minutes</small>
+            </div>
+
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <small>Seconds</small>
+            </div>
+
+        </div>
+
+        <!-- Celebrate button -->
+        <div class="buttons">
+
+            <button id="celebrateButton">
+                🇮🇳 Celebrate India 🇮🇳
+            </button>
+
+        </div>
+
+        <!-- Celebration message -->
+        <div
+            id="celebrationMessage"
+            class="celebration-message">
+
+            <h2>HAPPY INDEPENDENCE DAY 🇮🇳</h2>
+
+            <p>
+                Freedom in our hearts,<br>
+                Pride in our nation,<br>
+                Hope for our future.
+            </p>
+
+            <strong>— Harsh Hirdhani</strong>
+
+        </div>
 
     </main>
 
+    <!-- Fireworks -->
+    <canvas id="fireworksCanvas"></canvas>
+
+    <!-- JavaScript -->
     <script src="script.js"></script>
 
 </body>
-
-</html> 
-<script>
-function playMusic() {
-    const music = document.getElementById("backgroundMusic");
-    const button = document.getElementById("musicButton");
-
-    if (music.paused) {
-        music.play();
-        button.innerHTML = "⏸ Pause Music";
-    } else {
-        music.pause();
-        button.innerHTML = "▶ Play Music";
-    }
-}
-</script>
-
-</body>
-</html> 
+</html>
