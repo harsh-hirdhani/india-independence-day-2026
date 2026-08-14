@@ -295,14 +295,8 @@ function playMusic() {
     const button = document.getElementById("musicButton");
 
     if (music.paused) {
-        music.play()
-            .then(function () {
-                button.innerHTML = "⏸ Pause Music";
-            })
-            .catch(function (error) {
-                console.log(error);
-                alert("Music file cannot be played. Please check the MP3 file.");
-            });
+        music.play();
+        button.innerHTML = "⏸ Pause Music";
     } else {
         music.pause();
         button.innerHTML = "▶ Play Music";
