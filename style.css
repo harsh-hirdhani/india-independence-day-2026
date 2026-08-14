@@ -1,0 +1,677 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+
+    background: #050b18;
+
+    color: white;
+
+    min-height: 100vh;
+}
+
+.hero {
+    min-height: 100vh;
+
+    padding: 20px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at top,
+            rgba(255, 153, 51, 0.25),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom,
+            rgba(19, 136, 8, 0.25),
+            transparent 35%
+        ),
+        #050b18;
+}
+
+.hero-content {
+    max-width: 1000px;
+
+    padding: 165px 20px 25px;
+
+    position: relative;
+
+    z-index: 4;
+}
+
+.small-title {
+    color: #ff9933;
+
+    letter-spacing: 5px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: clamp(45px, 7vw, 82px);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+    margin-bottom: 25px;
+}
+
+h1 span {
+    display: block;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ff9933,
+            white,
+            #138808
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+.date {
+    font-size: 23px;
+
+    letter-spacing: 7px;
+
+    color: white;
+
+    margin-bottom: 15px;
+}
+
+.hero-message {
+    font-size: 19px;
+
+    color: #cbd5e1;
+
+    max-width: 600px;
+
+    margin: auto;
+
+    line-height: 1.6;
+}
+
+.buttons {
+    margin-top: 25px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+}
+
+button {
+    border: none;
+
+    padding: 15px 30px;
+
+    border-radius: 50px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+#musicButton {
+    background: #ff9933;
+
+    color: #111;
+}
+
+#celebrateButton {
+    background: #138808;
+
+    color: white;
+}
+
+button:hover {
+    transform: translateY(-5px) scale(1.03);
+
+    box-shadow:
+        0 10px 30px rgba(255, 255, 255, 0.15);
+}
+.flag-container {
+    position: absolute;
+
+    top: 25px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    z-index: 2;
+}
+
+.flag {
+    width: 200px;
+    height: 134px;
+
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    box-shadow:
+        0 12px 35px rgba(0, 0, 0, 0.4);
+
+    animation: flagWave 3s ease-in-out infinite;
+}
+
+.flag-stripe {
+    width: 100%;
+    height: 33.33%;
+}
+
+.saffron {
+    background: #ff9933;
+}
+
+.white {
+    background: #ffffff;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+.green {
+    background: #138808;
+}
+.chakra {
+    width: 58px;
+    height: 58px;
+
+    border: 4px solid #000080;
+    border-radius: 50%;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chakra-center {
+    width: 9px;
+    height: 9px;
+
+    background: #000080;
+
+    border-radius: 50%;
+
+    position: absolute;
+
+    z-index: 2;
+}
+
+.chakra span {
+    position: absolute;
+
+    width: 2px;
+    height: 25px;
+
+    background: #000080;
+
+    left: 50%;
+    top: 50%;
+
+    transform-origin: center;
+}
+
+.chakra span:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.chakra span:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(15deg);
+}
+
+.chakra span:nth-child(4) {
+    transform: translate(-50%, -50%) rotate(30deg);
+}
+
+.chakra span:nth-child(5) {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.chakra span:nth-child(6) {
+    transform: translate(-50%, -50%) rotate(60deg);
+}
+
+.chakra span:nth-child(7) {
+    transform: translate(-50%, -50%) rotate(75deg);
+}
+
+.chakra span:nth-child(8) {
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.chakra span:nth-child(9) {
+    transform: translate(-50%, -50%) rotate(105deg);
+}
+
+.chakra span:nth-child(10) {
+    transform: translate(-50%, -50%) rotate(120deg);
+}
+
+.chakra span:nth-child(11) {
+    transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.chakra span:nth-child(12) {
+    transform: translate(-50%, -50%) rotate(150deg);
+}
+
+.chakra span:nth-child(13) {
+    transform: translate(-50%, -50%) rotate(165deg);
+}
+
+.chakra span:nth-child(14) {
+    transform: translate(-50%, -50%) rotate(180deg);
+}
+
+.chakra span:nth-child(15) {
+    transform: translate(-50%, -50%) rotate(195deg);
+}
+
+.chakra span:nth-child(16) {
+    transform: translate(-50%, -50%) rotate(210deg);
+}
+
+.chakra span:nth-child(17) {
+    transform: translate(-50%, -50%) rotate(225deg);
+}
+
+.chakra span:nth-child(18) {
+    transform: translate(-50%, -50%) rotate(240deg);
+}
+
+.chakra span:nth-child(19) {
+    transform: translate(-50%, -50%) rotate(255deg);
+}
+
+.chakra span:nth-child(20) {
+    transform: translate(-50%, -50%) rotate(270deg);
+}
+
+.chakra span:nth-child(21) {
+    transform: translate(-50%, -50%) rotate(285deg);
+}
+
+.chakra span:nth-child(22) {
+    transform: translate(-50%, -50%) rotate(300deg);
+}
+
+.chakra span:nth-child(23) {
+    transform: translate(-50%, -50%) rotate(315deg);
+}
+
+.chakra span:nth-child(24) {
+    transform: translate(-50%, -50%) rotate(330deg);
+}
+
+.chakra span:nth-child(25) {
+    transform: translate(-50%, -50%) rotate(345deg);
+}
+
+.chakra::before {
+    content: "";
+
+    position: absolute;
+
+    width: 100%;
+    height: 4px;
+
+    background: #000080;
+
+    top: 50%;
+    left: 0;
+
+    transform: translateY(-50%);
+}
+
+.chakra::after {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 100%;
+
+    background: #000080;
+
+    left: 50%;
+    top: 0;
+
+    transform: translateX(-50%);
+}
+.flag-pole {
+    width: 7px;
+    height: 170px;
+
+    background: #b8b8b8;
+
+    position: absolute;
+
+    left: -8px;
+    top: 0;
+
+    border-radius: 5px;
+
+    z-index: -1;
+}
+@keyframes flagWave {
+
+    0% {
+        transform: perspective(600px) rotateY(0deg);
+    }
+
+    50% {
+        transform: perspective(600px) rotateY(-8deg);
+    }
+
+    100% {
+        transform: perspective(600px) rotateY(0deg);
+    }
+
+}
+/* TRICOLOR PARTICLES */
+
+.particles {
+    position: absolute;
+
+    inset: 0;
+
+    overflow: hidden;
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+
+    width: 5px;
+    height: 5px;
+
+    border-radius: 50%;
+
+    opacity: 0.7;
+
+    animation:
+        floatParticle linear infinite,
+        glowParticle 2s ease-in-out infinite alternate;
+}
+
+@keyframes floatParticle {
+
+    from {
+        transform: translateY(110vh);
+    }
+
+    to {
+        transform: translateY(-10vh);
+    }
+
+}
+
+@keyframes glowParticle {
+
+    from {
+        opacity: 0.25;
+
+        transform: scale(0.7);
+    }
+
+    to {
+        opacity: 0.9;
+
+        transform: scale(1.3);
+    }
+
+}
+/* COUNTDOWN */
+
+.countdown-section {
+    margin-top: 25px;
+}
+
+.countdown-title {
+    color: white;
+
+    font-size: 13px;
+
+    letter-spacing: 4px;
+
+    font-weight: 600;
+
+    margin-bottom: 15px;
+
+    opacity: 0.8;
+}
+
+.countdown {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    flex-wrap: wrap;
+}
+
+.time-box {
+    width: 85px;
+
+    padding: 12px 8px;
+
+    border-radius: 12px;
+
+    background: rgba(255, 255, 255, 0.08);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    backdrop-filter: blur(10px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.25);
+
+    transition: 0.3s;
+}
+
+.time-box:hover {
+    transform: translateY(-5px);
+
+    background: rgba(255, 255, 255, 0.13);
+}
+
+.time-box span {
+    display: block;
+
+    font-size: 30px;
+
+    font-weight: 800;
+
+    color: white;
+}
+
+.time-box small {
+    display: block;
+
+    margin-top: 4px;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    color: #ff9933;
+}
+/* PERSONAL GREETING CARD */
+
+.greeting-card {
+    max-width: 650px;
+
+    margin: 25px auto 0;
+
+    padding: 16px 25px;
+
+    background: rgba(255, 255, 255, 0.07);
+
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    border-radius: 20px;
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.25);
+
+    animation: greetingAppear 1.2s ease forwards;
+}
+
+.greeting-icon {
+    font-size: 30px;
+
+    margin-bottom: 5px;
+}
+
+.greeting-card h2 {
+    margin: 5px 0 12px;
+
+    font-size: 22px;
+
+    color: white;
+}
+
+.greeting-card p {
+    margin: 7px 0;
+
+    color: rgba(255, 255, 255, 0.85);
+
+    font-size: 15px;
+
+    line-height: 1.5;
+}
+
+.signature {
+    margin-top: 15px;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    background: linear-gradient(
+        90deg,
+        #ff9933,
+        white,
+        #138808
+    );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes greetingAppear {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+
+}
+.celebration-message {
+    display: none;
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 650px;
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+
+    animation: celebrationAppear 0.8s ease;
+}
+
+.celebration-message h2 {
+    color: #ff9933;
+    margin-bottom: 15px;
+}
+
+.celebration-message p {
+    line-height: 1.8;
+    color: white;
+}
+
+.celebration-message strong {
+    display: block;
+    margin-top: 15px;
+    color: #138808;
+}
+
+@keyframes celebrationAppear {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+#fireworksCanvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+    z-index: 9999;
+}
