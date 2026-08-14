@@ -1,9 +1,9 @@
 // ==========================================
-// INDIAN FLAG PARTICLES
+// TRICOLOR PARTICLES
 // ==========================================
 
 const particleContainer =
-    document.querySelector(".particles");
+    document.getElementById("particles");
 
 const particleColors = [
     "#ff9933",
@@ -11,21 +11,22 @@ const particleColors = [
     "#138808"
 ];
 
-for (let i = 0; i < 40; i++) {
+
+for (let i = 0; i < 60; i++) {
 
     const particle =
         document.createElement("span");
 
-    particle.classList.add("particle");
+    particle.className = "particle";
 
     particle.style.left =
         Math.random() * 100 + "%";
 
     particle.style.animationDuration =
-        8 + Math.random() * 12 + "s";
+        (7 + Math.random() * 10) + "s";
 
     particle.style.animationDelay =
-        Math.random() * 8 + "s";
+        (Math.random() * 8) + "s";
 
     particle.style.background =
         particleColors[
@@ -35,16 +36,22 @@ for (let i = 0; i < 40; i++) {
             )
         ];
 
-    particleContainer.appendChild(particle);
+    particleContainer.appendChild(
+        particle
+    );
 }
 
 
+
 // ==========================================
-// INDEPENDENCE DAY COUNTDOWN
+// COUNTDOWN
 // ==========================================
 
 const independenceDay =
-    new Date("August 15, 2026 00:00:00").getTime();
+    new Date(
+        "August 15, 2026 00:00:00"
+    ).getTime();
+
 
 function updateCountdown() {
 
@@ -54,22 +61,24 @@ function updateCountdown() {
     const difference =
         independenceDay - now;
 
+
     if (difference <= 0) {
 
-        document.getElementById("days").textContent =
-            "00";
+        document.getElementById("days")
+            .textContent = "00";
 
-        document.getElementById("hours").textContent =
-            "00";
+        document.getElementById("hours")
+            .textContent = "00";
 
-        document.getElementById("minutes").textContent =
-            "00";
+        document.getElementById("minutes")
+            .textContent = "00";
 
-        document.getElementById("seconds").textContent =
-            "00";
+        document.getElementById("seconds")
+            .textContent = "00";
 
         return;
     }
+
 
     const days =
         Math.floor(
@@ -77,11 +86,13 @@ function updateCountdown() {
             (1000 * 60 * 60 * 24)
         );
 
+
     const hours =
         Math.floor(
             (difference /
                 (1000 * 60 * 60)) % 24
         );
+
 
     const minutes =
         Math.floor(
@@ -89,27 +100,41 @@ function updateCountdown() {
                 (1000 * 60)) % 60
         );
 
+
     const seconds =
         Math.floor(
             (difference / 1000) % 60
         );
 
-    document.getElementById("days").textContent =
+
+    document.getElementById("days")
+        .textContent =
         String(days).padStart(2, "0");
 
-    document.getElementById("hours").textContent =
+
+    document.getElementById("hours")
+        .textContent =
         String(hours).padStart(2, "0");
 
-    document.getElementById("minutes").textContent =
+
+    document.getElementById("minutes")
+        .textContent =
         String(minutes).padStart(2, "0");
 
-    document.getElementById("seconds").textContent =
+
+    document.getElementById("seconds")
+        .textContent =
         String(seconds).padStart(2, "0");
 }
 
+
 updateCountdown();
 
-setInterval(updateCountdown, 1000);
+setInterval(
+    updateCountdown,
+    1000
+);
+
 
 
 // ==========================================
@@ -117,51 +142,59 @@ setInterval(updateCountdown, 1000);
 // ==========================================
 
 const music =
-    document.getElementById("backgroundMusic");
+    document.getElementById(
+        "backgroundMusic"
+    );
+
 
 const musicButton =
-    document.getElementById("musicButton");
+    document.getElementById(
+        "musicButton"
+    );
+
 
 musicButton.addEventListener(
     "click",
-    function () {
+    async function () {
 
-        if (music.paused) {
+        try {
 
-            music.play()
-                .then(function () {
+            if (music.paused) {
 
-                    musicButton.textContent =
-                        "⏸ Pause Music";
+                await music.play();
 
-                })
-                .catch(function (error) {
+                musicButton.textContent =
+                    "⏸ Pause Music";
 
-                    console.log(
-                        "Music error:",
-                        error
-                    );
+            } else {
 
-                    alert(
-                        "Music could not be played. Please check the MP3 file."
-                    );
+                music.pause();
 
-                });
+                musicButton.textContent =
+                    "▶ Play Music";
 
-        } else {
+            }
 
-            music.pause();
+        } catch (error) {
 
-            musicButton.textContent =
-                "▶ Play Music";
+            console.error(
+                "Music error:",
+                error
+            );
+
+            alert(
+                "Music could not be played. Make sure independence-song.mp3 is in the same folder as index.html."
+            );
+
         }
 
     }
 );
 
 
+
 // ==========================================
-// CELEBRATE INDIA BUTTON
+// CELEBRATE BUTTON
 // ==========================================
 
 const celebrateButton =
@@ -169,10 +202,12 @@ const celebrateButton =
         "celebrateButton"
     );
 
+
 const celebrationMessage =
     document.getElementById(
         "celebrationMessage"
     );
+
 
 celebrateButton.addEventListener(
     "click",
@@ -181,8 +216,12 @@ celebrateButton.addEventListener(
         celebrationMessage.style.display =
             "block";
 
-        // Launch fireworks
-        for (let i = 0; i < 8; i++) {
+
+        for (
+            let i = 0;
+            i < 12;
+            i++
+        ) {
 
             setTimeout(
                 function () {
@@ -190,13 +229,14 @@ celebrateButton.addEventListener(
                     createFirework();
 
                 },
-                i * 300
+                i * 250
             );
 
         }
 
     }
 );
+
 
 
 // ==========================================
@@ -207,6 +247,7 @@ const canvas =
     document.getElementById(
         "fireworksCanvas"
     );
+
 
 const ctx =
     canvas.getContext("2d");
@@ -221,7 +262,9 @@ function resizeCanvas() {
         window.innerHeight;
 }
 
+
 resizeCanvas();
+
 
 window.addEventListener(
     "resize",
@@ -231,7 +274,8 @@ window.addEventListener(
 
 let fireworks = [];
 
-let particles = [];
+let explosionParticles = [];
+
 
 
 // ==========================================
@@ -244,9 +288,12 @@ function createFirework() {
         Math.random() *
         canvas.width;
 
-    const y =
+
+    const targetY =
+        100 +
         Math.random() *
-        (canvas.height * 0.55);
+        (canvas.height * 0.45);
+
 
     fireworks.push({
 
@@ -254,19 +301,25 @@ function createFirework() {
 
         y: canvas.height,
 
-        targetY: y,
+        targetY: targetY,
 
-        speed: 8
+        speed:
+            7 +
+            Math.random() * 3
 
     });
 }
 
 
+
 // ==========================================
-// FIREWORK EXPLOSION
+// EXPLODE
 // ==========================================
 
-function explode(x, y) {
+function explode(
+    x,
+    y
+) {
 
     const colors = [
         "#ff9933",
@@ -274,16 +327,24 @@ function explode(x, y) {
         "#138808"
     ];
 
-    for (let i = 0; i < 60; i++) {
+
+    for (
+        let i = 0;
+        i < 80;
+        i++
+    ) {
 
         const angle =
             Math.random() *
             Math.PI * 2;
 
-        const speed =
-            Math.random() * 6 + 2;
 
-        particles.push({
+        const speed =
+            2 +
+            Math.random() * 7;
+
+
+        explosionParticles.push({
 
             x: x,
 
@@ -299,6 +360,10 @@ function explode(x, y) {
 
             alpha: 1,
 
+            size:
+                1 +
+                Math.random() * 3,
+
             color:
                 colors[
                     Math.floor(
@@ -308,8 +373,11 @@ function explode(x, y) {
                 ]
 
         });
+
     }
+
 }
+
 
 
 // ==========================================
@@ -326,15 +394,20 @@ function animateFireworks() {
     );
 
 
-    // Fireworks going upward
+    // Rockets
 
     fireworks.forEach(
-        function (firework, index) {
+        function (
+            firework,
+            index
+        ) {
 
             firework.y -=
                 firework.speed;
 
+
             ctx.beginPath();
+
 
             ctx.arc(
                 firework.x,
@@ -344,8 +417,10 @@ function animateFireworks() {
                 Math.PI * 2
             );
 
+
             ctx.fillStyle =
                 "#ffffff";
+
 
             ctx.fill();
 
@@ -360,10 +435,12 @@ function animateFireworks() {
                     firework.y
                 );
 
+
                 fireworks.splice(
                     index,
                     1
                 );
+
             }
 
         }
@@ -372,60 +449,73 @@ function animateFireworks() {
 
     // Explosion particles
 
-    particles.forEach(
-        function (particle, index) {
+    explosionParticles.forEach(
+        function (
+            particle,
+            index
+        ) {
 
             particle.x +=
                 particle.vx;
 
+
             particle.y +=
                 particle.vy;
 
+
             particle.vy +=
-                0.04;
+                0.05;
+
 
             particle.alpha -=
                 0.015;
 
 
+            ctx.globalAlpha =
+                particle.alpha;
+
+
             ctx.beginPath();
+
 
             ctx.arc(
                 particle.x,
                 particle.y,
-                2,
+                particle.size,
                 0,
                 Math.PI * 2
             );
 
+
             ctx.fillStyle =
                 particle.color;
 
-            ctx.globalAlpha =
-                particle.alpha;
 
             ctx.fill();
-
-            ctx.globalAlpha = 1;
 
 
             if (
                 particle.alpha <= 0
             ) {
 
-                particles.splice(
+                explosionParticles.splice(
                     index,
                     1
                 );
+
             }
 
         }
     );
 
 
+    ctx.globalAlpha = 1;
+
+
     requestAnimationFrame(
         animateFireworks
     );
 }
+
 
 animateFireworks();
