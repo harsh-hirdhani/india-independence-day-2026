@@ -134,13 +134,26 @@
 
                 <div class="buttons">
 
-                    <button id="musicButton">
-    ▶ Play Music
+                   <button id="musicButton" onclick="playMusic()">
+    ▶️ Play Music
 </button>
 
-<audio id="backgroundMusic" loop>
-    <source src="music/independence-song.mp3" type="audio/mpeg">
-</audio>
+<audio id="backgroundMusic" src="independence-song.mp3" loop></audio>
+<div class="buttons">
+
+    <button id="musicButton" onclick="playMusic()">
+        ▶️ Play Music
+    </button>
+
+    <audio id="backgroundMusic" src="independence-song.mp3" loop></audio>
+
+    <canvas id="fireworksCanvas"></canvas>
+
+    <button id="celebrateButton">
+        Celebrate India
+    </button>
+
+</div>
 <canvas id="fireworksCanvas"></canvas>
  <button id="celebrateButton">
     Celebrate India
@@ -169,4 +182,15 @@
 
 </body>
 
+</html>
+<script src="script.js"></script>
+
+<script>
+function playMusic() {
+    const music = document.getElementById("backgroundMusic");
+    music.play();
+}
+</script>
+
+</body>
 </html>
