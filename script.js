@@ -290,3 +290,15 @@ function animateFireworks() {
 }
 
 animateFireworks();
+function playMusic() {
+    const music = document.getElementById("backgroundMusic");
+    const button = document.getElementById("musicButton");
+
+    if (music.paused) {
+        music.play();
+        button.innerHTML = "⏸️ Pause Music";
+    } else {
+        music.pause();
+        button.innerHTML = "▶️ Play Music";
+    }
+}
