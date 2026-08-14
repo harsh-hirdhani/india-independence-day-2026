@@ -295,10 +295,16 @@ function playMusic() {
     const button = document.getElementById("musicButton");
 
     if (music.paused) {
-        music.play();
-        button.innerHTML = "⏸️ Pause Music";
+        music.play()
+            .then(function () {
+                button.innerHTML = "⏸ Pause Music";
+            })
+            .catch(function (error) {
+                console.log(error);
+                alert("Music file cannot be played. Please check the MP3 file.");
+            });
     } else {
         music.pause();
-        button.innerHTML = "▶️ Play Music";
+        button.innerHTML = "▶ Play Music";
     }
 }
